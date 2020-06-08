@@ -9,12 +9,21 @@ import {
   IonIcon,
   IonLabel,
 } from "@ionic/react";
+
+import {
+  newspaperOutline,
+  trendingUpOutline,
+  searchOutline,
+  documentTextOutline,
+  personOutline,
+} from "ionicons/icons";
+
 import { IonReactRouter } from "@ionic/react-router";
-import News from "srcpagesTabs\news.js";
-import Profile from "srcpagesTabsprofile.js";
-import Search from "srcpagesTabsSearch.js";
-import Submit from "srcpagesTabsSubmit.js";
-import Trending from "srcpagesTabsTrending.js";
+import News from "./pages/Tabs/news";
+import Profile from "./pages/Tabs/profile";
+import Search from "./pages/Tabs/Search";
+import Submit from "./pages/Tabs/Submit";
+import Trending from "./pages/Tabs/Trending";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -40,7 +49,7 @@ const App = () => (
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
-          <Route path="/" render={() => <Redirect to="/news" />} exact={true} />
+          <Route path="" render={() => <Redirect to="/news" />} exact={true} />
           <Route path="/news" component={News} />
           <Route path="/trending" component={Trending} />
           <Route path="/submit" component={Submit} />
@@ -49,13 +58,28 @@ const App = () => (
           <Route component={() => <Redirect to="/news" />} />
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
-          <IonTabButton tab="news" href="src\pages\Tabs\news.js">
-            <IonIcon icon="public\assets\icon\favicon.png" />
-            <IonLabel> Newz</IonLabel>
+          <IonTabButton tab="Home" href="Home">
+            <IonIcon icon={newspaperOutline} />
+            <IonLabel id="a1"> Home</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="trending" href="src\pages\Tabs\Trending.js">
-            <IonIcon icon="public\assets\icon\favicon.png" />
-            <IonLabel> trending</IonLabel>
+          <IonTabButton tab="trending" href="Trending">
+            <IonIcon icon={trendingUpOutline} />
+            <IonLabel id="a1"> trending</IonLabel>
+          </IonTabButton>
+
+          <IonTabButton tab="search" href="Search">
+            <IonIcon icon={searchOutline} />
+            <IonLabel id="a1">Search</IonLabel>
+          </IonTabButton>
+
+          <IonTabButton tab="submit" href="Submit">
+            <IonIcon icon={documentTextOutline} />
+            <IonLabel id="a1">Submit</IonLabel>
+          </IonTabButton>
+
+          <IonTabButton tab="profile" href="Profile">
+            <IonIcon icon={personOutline} />
+            <IonLabel id="a1">Profile</IonLabel>
           </IonTabButton>
         </IonTabBar>
       </IonTabs>

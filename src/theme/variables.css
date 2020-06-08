@@ -5,11 +5,11 @@ http://ionicframework.com/docs/theming/ */
 :root {
   /** primary **/
 
-  --ion-color-primary: #242424;
+  --ion-color-primary: #353535;
   --ion-color-primary-rgb: 36, 36, 36;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
-  --ion-color-primary-shade: #202020;
+  --ion-color-primary-shade: #353535;
   --ion-color-primary-tint: #3a3a3a;
   /** secondary **/
   --ion-color-secondary: #3dc2ff;
@@ -224,4 +224,8 @@ http://ionicframework.com/docs/theming/ */
 
     --ion-tab-bar-background: #1f1f1f;
   }
+}
+
+ion-title {
+  text-align: center;
 }
