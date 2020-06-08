@@ -42,16 +42,20 @@ const App = () => (
         <IonRouterOutlet>
           <Route path="/" render={() => <Redirect to="/news" />} exact={true} />
           <Route path="/news" component={News} />
-          <Route path="/trending" component={trending} />
-          <Route path="/submit" component={submit} />
-          <Route path="/search" component={search} />
-          <Route path="/profile" component={profile} />
+          <Route path="/trending" component={Trending} />
+          <Route path="/submit" component={Submit} />
+          <Route path="/search" component={Search} />
+          <Route path="/profile" component={Profile} />
           <Route component={() => <Redirect to="/news" />} />
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
           <IonTabButton tab="news" href="src\pages\Tabs\news.js">
             <IonIcon icon="public\assets\icon\favicon.png" />
             <IonLabel> Newz</IonLabel>
+          </IonTabButton>
+          <IonTabButton tab="trending" href="src\pages\Tabs\Trending.js">
+            <IonIcon icon="public\assets\icon\favicon.png" />
+            <IonLabel> trending</IonLabel>
           </IonTabButton>
         </IonTabBar>
       </IonTabs>
