@@ -57,7 +57,7 @@ const App = () => (
           <Route path="/profile" component={Profile} />
           <Route component={() => <Redirect to="/news" />} />
         </IonRouterOutlet>
-        <IonTabBar slot="bottom">
+        <IonTabBar color="dark" slot="bottom">
           <IonTabButton tab="Home" href="Home">
             <IonIcon icon={newspaperOutline} />
             <IonLabel id="a1"> Home</IonLabel>
