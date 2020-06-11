@@ -55,6 +55,8 @@ const App = () => (
           <Route path="/submit" component={Submit} />
           <Route path="/search" component={Search} />
           <Route path="/profile" component={Profile} />
+          <Route path="/edit-profile" component={EditProfile} />
+          <Route path="/register" component={Signup} />
           <Route component={() => <Redirect to="/news" />} />
         </IonRouterOutlet>
         <IonTabBar color="dark" slot="bottom">
