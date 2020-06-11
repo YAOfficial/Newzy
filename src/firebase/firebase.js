@@ -4,7 +4,7 @@ import "firebase/firestore";
 import firebaseconfig from "./config";
 import firebaseConfig from "./config";
 
-class firebase {
+class Firebase {
   constructor() {
     app.initializeApp(firebaseConfig);
     this.app = app;
@@ -12,9 +12,26 @@ class firebase {
     this.db = app.firestore();
   }
 
-  const firebase =
+  async register(name, email, password) {
+    const newUser = await this.auth.createUserWithEmailAndPassword(
+      email,
+      password
+    );
+    return newUser.user.updateProfile({
+      displayName: name,
+    });
+  }
+  login(email, password) {
+    return this.auth.signInWithEmailAndPassword(email, password);
+  }
+
+  logout() {
+    return this.auth.signOut();
+  }
+  resetPassword(email) {
+    return this.auth.sendPasswordResetEmail(email);
+  }
 }
 
-const firebase = new firebase();
-export default  firebase
-
+const firebase = new Firebase();
+export default firebase;
