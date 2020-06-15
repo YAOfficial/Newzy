@@ -7,14 +7,14 @@ import {
   IonTitle,
 } from "@ionic/react";
 
-const NavHeader = () => {
+const NavHeader = ({ title }) => {
   return (
     <IonHeader>
-      <IonToolbar>
-        <IonButton>
+      <IonToolbar color="p">
+        <IonButton slot="start">
           <IonBackButton defaultHref="/" />
         </IonButton>
-        <IonTitle>(title)</IonTitle>
+        <IonTitle>{title}</IonTitle>
       </IonToolbar>
     </IonHeader>
   );

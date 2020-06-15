@@ -24,7 +24,10 @@ import Profile from "./pages/Tabs/profile";
 import Search from "./pages/Tabs/Search";
 import Submit from "./pages/Tabs/Submit";
 import Trending from "./pages/Tabs/Trending";
-
+import EditProfile from "./pages/Auth/EditProfile.js";
+import Signup from "./pages/Auth/Signup.js";
+import Login from "./pages/Auth/login.js";
+import Forgot from "./pages/Auth/forgot.js";
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
 
@@ -57,31 +60,33 @@ const App = () => (
           <Route path="/profile" component={Profile} />
           <Route path="/edit-profile" component={EditProfile} />
           <Route path="/register" component={Signup} />
+          <Route path="/login" component={Login} />
+          <Route path="/forgot" component={Forgot} />
           <Route component={() => <Redirect to="/news" />} />
         </IonRouterOutlet>
-        <IonTabBar color="dark" slot="bottom">
+        <IonTabBar color="primary" slot="bottom">
           <IonTabButton tab="Home" href="Home">
             <IonIcon icon={newspaperOutline} />
-            <IonLabel id="a1"> Home</IonLabel>
+            <IonLabel class="ion-text-center "> Home</IonLabel>
           </IonTabButton>
           <IonTabButton tab="trending" href="Trending">
             <IonIcon icon={trendingUpOutline} />
-            <IonLabel id="a1"> trending</IonLabel>
+            <IonLabel class="ion-text-center "> trending</IonLabel>
           </IonTabButton>
 
           <IonTabButton tab="search" href="Search">
             <IonIcon icon={searchOutline} />
-            <IonLabel id="a1">Search</IonLabel>
+            <IonLabel class="ion-text-center ">Search</IonLabel>
           </IonTabButton>
 
           <IonTabButton tab="submit" href="Submit">
             <IonIcon icon={documentTextOutline} />
-            <IonLabel id="a1">Submit</IonLabel>
+            <IonLabel class="ion-text-center ">Submit</IonLabel>
           </IonTabButton>
 
           <IonTabButton tab="profile" href="Profile">
             <IonIcon icon={personOutline} />
-            <IonLabel id="a1">Profile</IonLabel>
+            <IonLabel class="ion-text-center ">Profile</IonLabel>
           </IonTabButton>
         </IonTabBar>
       </IonTabs>
