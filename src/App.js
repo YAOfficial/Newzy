@@ -28,6 +28,9 @@ import EditProfile from "./pages/Auth/EditProfile.js";
 import Signup from "./pages/Auth/Signup.js";
 import Login from "./pages/Auth/login.js";
 import Forgot from "./pages/Auth/forgot.js";
+import useAuth from "./hooks/useAuth.js";
+import UserContent from "./contents/UserContent.js";
+
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
 
@@ -47,51 +50,59 @@ import "@ionic/react/css/display.css";
 /* Theme variables */
 import "./theme/variables.css";
 
-const App = () => (
-  <IonApp>
-    <IonReactRouter>
-      <IonTabs>
-        <IonRouterOutlet>
-          <Route path="" render={() => <Redirect to="/news" />} exact={true} />
-          <Route path="/news" component={News} />
-          <Route path="/trending" component={Trending} />
-          <Route path="/submit" component={Submit} />
-          <Route path="/search" component={Search} />
-          <Route path="/profile" component={Profile} />
-          <Route path="/edit-profile" component={EditProfile} />
-          <Route path="/register" component={Signup} />
-          <Route path="/login" component={Login} />
-          <Route path="/forgot" component={Forgot} />
-          <Route component={() => <Redirect to="/news" />} />
-        </IonRouterOutlet>
-        <IonTabBar color="primary" slot="bottom">
-          <IonTabButton tab="Home" href="Home">
-            <IonIcon icon={newspaperOutline} />
-            <IonLabel class="ion-text-center "> Home</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="trending" href="Trending">
-            <IonIcon icon={trendingUpOutline} />
-            <IonLabel class="ion-text-center "> trending</IonLabel>
-          </IonTabButton>
+const App = () => {
+  const [user, setUser] = useAuth();
+  return (
+    <IonApp>
+      <IonReactRouter>
+        <UserContent.Provider value={{ user, setUser }}>
+          <IonTabs>
+            <IonRouterOutlet>
+              <Route
+                path=""
+                render={() => <Redirect to="/news" />}
+                exact={true}
+              />
+              <Route path="/news" component={News} />
+              <Route path="/trending" component={Trending} />
+              <Route path="/submit" component={Submit} />
+              <Route path="/search" component={Search} />
+              <Route path="/profile" component={Profile} />
+              <Route path="/edit-profile" component={EditProfile} />
+              <Route path="/register" component={Signup} />
+              <Route path="/login" component={Login} />
+              <Route path="/forgot" component={Forgot} />
+              <Route component={() => <Redirect to="/news" />} />
+            </IonRouterOutlet>
+            <IonTabBar color="primary" slot="bottom">
+              <IonTabButton tab="Home" href="Home">
+                <IonIcon icon={newspaperOutline} />
+                <IonLabel class="ion-text-center "> Home</IonLabel>
+              </IonTabButton>
+              <IonTabButton tab="trending" href="Trending">
+                <IonIcon icon={trendingUpOutline} />
+                <IonLabel class="ion-text-center "> trending</IonLabel>
+              </IonTabButton>
 
-          <IonTabButton tab="search" href="Search">
-            <IonIcon icon={searchOutline} />
-            <IonLabel class="ion-text-center ">Search</IonLabel>
-          </IonTabButton>
+              <IonTabButton tab="search" href="Search">
+                <IonIcon icon={searchOutline} />
+                <IonLabel class="ion-text-center ">Search</IonLabel>
+              </IonTabButton>
 
-          <IonTabButton tab="submit" href="Submit">
-            <IonIcon icon={documentTextOutline} />
-            <IonLabel class="ion-text-center ">Submit</IonLabel>
-          </IonTabButton>
+              <IonTabButton tab="submit" href="Submit">
+                <IonIcon icon={documentTextOutline} />
+                <IonLabel class="ion-text-center ">Submit</IonLabel>
+              </IonTabButton>
 
-          <IonTabButton tab="profile" href="Profile">
-            <IonIcon icon={personOutline} />
-            <IonLabel class="ion-text-center ">Profile</IonLabel>
-          </IonTabButton>
-        </IonTabBar>
-      </IonTabs>
-    </IonReactRouter>
-  </IonApp>
-);
-
+              <IonTabButton tab="profile" href="Profile">
+                <IonIcon icon={personOutline} />
+                <IonLabel class="ion-text-center ">Profile</IonLabel>
+              </IonTabButton>
+            </IonTabBar>
+          </IonTabs>
+        </UserContent.Provider>
+      </IonReactRouter>
+    </IonApp>
+  );
+};
 export default App;
