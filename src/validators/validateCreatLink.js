@@ -1,4 +1,4 @@
-export default function validateCreatLink(values) {
+export default function validateCreateLink(values) {
   let errors = {};
 
   if (!values.description) {

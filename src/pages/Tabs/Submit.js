@@ -7,19 +7,21 @@ import {
   IonInput,
   IonRow,
   IonButton,
+  IonCol,
 } from "@ionic/react";
 import SmallHeader from "../../components/Headers/SmallHeader";
 import LargeHeader from "../../components/Headers/LargeHeader";
 import UserContext from "../../contents/UserContext";
 import useForm from "../../hooks/userForm";
 import firebase from "../../firebase";
-import validateCreateLink from "../../validateCreateLink";
+import validateCreateLink from "../../validators/validateCreatLink.js";
+
 const INITIAL_STATE = {
   description: "",
   url: "",
 };
 
-const Submit = () => {
+const Submit = (props) => {
   const { user } = React.useContext(UserContext);
   const { handleSubmit, handleChange, values } = useForm(
     INITIAL_STATE,
@@ -44,7 +46,7 @@ const Submit = () => {
         comments: [],
         created: Date.now(),
       };
-      firebase.database.collection("links").add(newLink);
+      firebase.db.collection("links").add(newLink);
       props.history.push("/");
     }
   }
@@ -80,7 +82,10 @@ const Submit = () => {
               color="primary"
               expand="block"
               onClick={handleSubmit}
-            ></IonButton>
+            >
+              {" "}
+              Submit
+            </IonButton>
           </IonCol>
         </IonRow>
       </IonContent>
