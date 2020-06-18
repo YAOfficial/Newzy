@@ -10,7 +10,7 @@ import {
   IonButton,
   IonLoading,
 } from "@ionic/react";
-import { navigateSharp } from "ionicons/icons";
+
 import NavHeader from "../../components/Headers/NavHeader";
 import validatePasswordReset from "../../validators/validatePasswordReset";
 import { toast } from "../../helpers/toast";

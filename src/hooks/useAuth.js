@@ -1,7 +1,6 @@
 import React from "react";
 
 import firebase from "../firebase";
-import firebaseConfig from "../firebase/config";
 
 function useAuth() {
   const [authUser, setAuthUser] = React.useState(null);
@@ -14,7 +13,11 @@ function useAuth() {
         setAuthUser(null);
       }
     });
+
     return () => unsubscribe();
   }, {});
-  return authUser, setAuthUser;
+
+  return [authUser, setAuthUser];
 }
+
+export default useAuth;
