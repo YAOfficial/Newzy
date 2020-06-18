@@ -64,7 +64,7 @@ const Profile = (props) => {
               <IonCol>
                 <IonButton
                   expand="block"
-                  routerLink={"/edit=profile"}
+                  routerLink={"/edit-profile"}
                   color="primary"
                   fill="outline"
                 >
@@ -102,7 +102,7 @@ const Profile = (props) => {
               <IonCol>
                 <IonButton
                   expand="block"
-                  routerLink={"./register"}
+                  routerLink={"./Login"}
                   color="primary"
                   fill="outline"
                 >
