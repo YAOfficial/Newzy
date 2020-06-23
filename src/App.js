@@ -23,6 +23,7 @@ import News from "./pages/Tabs/news";
 import Profile from "./pages/Tabs/profile";
 import Search from "./pages/Tabs/Search";
 import Submit from "./pages/Tabs/Submit";
+
 import Trending from "./pages/Tabs/Trending";
 import EditProfile from "./pages/Auth/EditProfile.js";
 import Signup from "./pages/Auth/Signup.js";
@@ -30,7 +31,7 @@ import Login from "./pages/Auth/login.js";
 import Forgot from "./pages/Auth/forgot.js";
 import useAuth from "./hooks/useAuth.js";
 import UserContext from "./contents/UserContext.js";
-
+import Link from "./pages/Link";
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
 
@@ -73,6 +74,7 @@ const App = () => {
               <Route path="/register" component={Signup} />
               <Route path="/login" component={Login} />
               <Route path="/forgot" component={Forgot} />
+              <Route path="/link/:linkId" component={Link} />
               <Route component={() => <Redirect to="/news" />} />
             </IonRouterOutlet>
             <IonTabBar color="primary" slot="bottom">

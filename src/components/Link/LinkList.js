@@ -1,10 +1,10 @@
 import React from "react";
 import firebase from "../../firebase";
-import { Link } from "react-router-dom";
+import LinkItem from "./LinkItem";
 
 const LinkList = (props) => {
   const [links, setLinks] = React.useState([]);
-  const isTrending = props.locataion.pathname.includes("trending");
+  const isTrending = props.location.pathname.includes("trending");
   React.useEffect(() => {
     const unsubscribe = getLinks();
     return () => unsubscribe();
@@ -24,7 +24,7 @@ const LinkList = (props) => {
       .onSnapshot(handleSnapShot);
   }
 
-  function handleSnapShot() {
+  function handleSnapShot(snapshot) {
     const links = snapshot.docs.map((doc) => {
       return { id: doc.id, ...doc.data() };
     });
@@ -33,9 +33,15 @@ const LinkList = (props) => {
 
   return (
     <>
-      {links.map((link, index) => {
-        <LinkItem key={link.id} />;
-      })}
+      {links.map((link, index) => (
+        <LinkItem
+          key={link.id}
+          showCount={true}
+          url={`/link/${link.id}`}
+          link={link}
+          index={index + 1}
+        />
+      ))}
     </>
   );
 };
