@@ -11,18 +11,18 @@ import {
   IonGrid,
   IonRow,
   IonCol,
-  IonText,
-  IonLabel,
   IonBadge,
   IonButton,
 } from "@ionic/react";
 import LinkItem from "../components/Link/LinkItem";
-
+import CommentModal from "../components/Link/CommentModal";
+import LinkComment from "../components/Link/LinkComment";
 const { Browser } = Plugins;
 
 const Link = (props) => {
   const { user } = React.useContext(UserContext);
   const [link, setLink] = React.useState(null);
+  const [showModal, setShowModal] = React.useState(false);
   const linkId = props.match.params.linkId;
   const linkRef = firebase.db.collection("links").doc(linkId);
 
@@ -35,6 +35,42 @@ const Link = (props) => {
     linkRef.get().then((doc) => {
       setLink({ ...doc.data(), id: doc.id });
     });
+  }
+
+  function handleOpenModal() {
+    if (!user) {
+      props.history.push("/login");
+    } else {
+      setShowModal(true);
+    }
+  }
+
+  function handleCloseModal() {
+    setShowModal(false);
+  }
+
+  function handleAddComment(commentText) {
+    if (!user) {
+      props.history.push("/login");
+    } else {
+      linkRef.get().then((doc) => {
+        if (doc.exists) {
+          const previousComments = doc.data().comments;
+          const newComment = {
+            postedBy: { id: user.uid, name: user.displayName },
+            created: Date.now(),
+            text: commentText,
+          };
+          const updatedComments = [...previousComments, newComment];
+          linkRef.update({ comments: updatedComments });
+          setLink((prevState) => ({
+            ...prevState,
+            comments: updatedComments,
+          }));
+        }
+      });
+      setShowModal(false);
+    }
   }
 
   function handleAddVote() {
@@ -88,6 +124,12 @@ const Link = (props) => {
         action={handleDeleteLink}
       />
       <IonContent>
+        <CommentModal
+          isOpen={showModal}
+          title="New Comment"
+          sendAction={handleAddComment}
+          closeAction={handleCloseModal}
+        />
         {link && (
           <>
             <IonGrid>
@@ -98,10 +140,21 @@ const Link = (props) => {
                     {" "}
                     upvote{" "}
                   </IonButton>
+                  <IonButton onClick={() => handleOpenModal()} size="Smaill">
+                    Comment
+                  </IonButton>
                   <IonBadge style={{ backgroundColor: "black" }}> hey</IonBadge>
                 </IonCol>
               </IonRow>
             </IonGrid>
+            {link.comments.map((comment, index) => (
+              <LinkComment
+                key={index}
+                comment={comment}
+                link={link}
+                setLink={setLink}
+              />
+            ))}
           </>
         )}
       </IonContent>
