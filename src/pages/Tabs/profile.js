@@ -84,6 +84,18 @@ const Profile = (props) => {
                 </IonButton>
               </IonCol>
             </IonRow>
+            <IonRow>
+              <IonCol>
+                <IonButton
+                  expand="block"
+                  onclick="javascript:location.href='https://yaofficial.github.io/-me/'"
+                  color="primary"
+                  fill="outline"
+                >
+                  Visit my site for more projects
+                </IonButton>
+              </IonCol>
+            </IonRow>
           </>
         ) : (
           <IonGrid>
@@ -107,6 +119,18 @@ const Profile = (props) => {
                   fill="outline"
                 >
                   Log In
+                </IonButton>
+              </IonCol>
+            </IonRow>
+            <IonRow>
+              <IonCol>
+                <IonButton
+                  expand="block"
+                  onclick="javascript:location.href='https://yaofficial.github.io/-me/'"
+                  color="primary"
+                  fill="outline"
+                >
+                  Visit my site for more projects
                 </IonButton>
               </IonCol>
             </IonRow>

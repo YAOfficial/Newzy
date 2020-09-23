@@ -3,9 +3,9 @@ http://ionicframework.com/docs/theming/ */
 
 /** Ionic CSS Variables **/
 #oi {
-  -webkit-box-shadow: 0px 13px 24px 4px rgba(194, 194, 194, 1);
-  -moz-box-shadow: 0px 13px 24px 4px rgba(194, 194, 194, 1);
-  box-shadow: 0px 13px 24px 4px rgba(194, 194, 194, 1);
+  -webkit-box-shadow: 0px 13px 24px 4px rgb(67, 67, 67);
+  -moz-box-shadow: 0px 13px 24px 4px rgb(72, 72, 72);
+  box-shadow: 0px 13px 24px 4px rgb(33, 32, 32);
 }
 :root {
   /** primary **/
@@ -57,11 +57,11 @@ http://ionicframework.com/docs/theming/ */
   --ion-color-danger-tint: #ed576b;
 
   /** dark **/
-  --ion-color-dark: #222428;
+  --ion-color-dark: #2b2d31;
   --ion-color-dark-rgb: 34, 36, 40;
   --ion-color-dark-contrast: #ffffff;
   --ion-color-dark-contrast-rgb: 255, 255, 255;
-  --ion-color-dark-shade: #1e2023;
+  --ion-color-dark-shade: #303338;
   --ion-color-dark-tint: #383a3e;
 
   /** medium **/
