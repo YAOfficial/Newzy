@@ -6,7 +6,7 @@ import LinkList from "../../components/Link/LinkList";
 const News = (props) => {
   return (
     <IonPage>
-      <SmallHeader title="News" />
+      <SmallHeader title="Newzy" />
       <IonContent fullscreen>
         <LargeHeader title="News" />
         <LinkList location={props.location} />

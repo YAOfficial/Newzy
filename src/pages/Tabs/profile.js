@@ -88,7 +88,8 @@ const Profile = (props) => {
               <IonCol>
                 <IonButton
                   expand="block"
-                  onclick="javascript:location.href='https://yaofficial.github.io/-me/'"
+                  //eslint-disable-next-line
+                  onclick="javascript:location.href='https://yaofficial.github.io/portfolio/'"
                   color="primary"
                   fill="outline"
                 >
@@ -126,7 +127,8 @@ const Profile = (props) => {
               <IonCol>
                 <IonButton
                   expand="block"
-                  onclick="javascript:location.href='https://yaofficial.github.io/-me/'"
+                  //eslint-disable-next-line
+                  onclick="javascript:location.href='https://yaofficial.github.io/portfolio/'"
                   color="primary"
                   fill="outline"
                 >

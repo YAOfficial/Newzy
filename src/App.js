@@ -80,7 +80,7 @@ const App = () => {
             <IonTabBar color="primary" slot="bottom">
               <IonTabButton tab="Home" href="Home">
                 <IonIcon icon={newspaperOutline} />
-                <IonLabel class="ion-text-center "> Home</IonLabel>
+                <IonLabel class="ion-text-center ">Home</IonLabel>
               </IonTabButton>
               <IonTabButton tab="trending" href="Trending">
                 <IonIcon icon={trendingUpOutline} />
