@@ -52,9 +52,9 @@ const Submit = (props) => {
   }
   return (
     <IonPage>
-      <SmallHeader title="Submit" />
+     
       <IonContent fullscreen>
-        <LargeHeader title="Submit" />
+       
         <IonItem lines="full">
           <IonLabel position="floating"> Description</IonLabel>
           <IonInput
@@ -63,6 +63,7 @@ const Submit = (props) => {
             type="text"
             onIonChange={handleChange}
             required
+          
           ></IonInput>
         </IonItem>
         <IonItem lines="full">

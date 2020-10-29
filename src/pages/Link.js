@@ -143,7 +143,7 @@ const Link = (props) => {
                   <IonButton onClick={() => handleOpenModal()} size="Smaill">
                     Comment
                   </IonButton>
-                  <IonBadge style={{ backgroundColor: "black" }}> hey</IonBadge>
+                 
                 </IonCol>
               </IonRow>
             </IonGrid>

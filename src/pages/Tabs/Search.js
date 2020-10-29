@@ -48,9 +48,9 @@ const Search = () => {
   }
   return (
     <IonPage>
-      <SmallHeader title="Search" />
+     
       <IonContent fullscreen>
-        <LargeHeader title="Search" />
+      
         <IonSearchbar
           placeholder="Search"
           spellCheck="false"
@@ -58,6 +58,7 @@ const Search = () => {
           value={filter}
           onKeyPress={handleChange}
           animated
+          color="primary"
         />
         {filteredLinks.map((filteredLink, index) => (
           <LinkItem
@@ -65,6 +66,7 @@ const Search = () => {
             showCount={false}
             link={filteredLink}
             index={index}
+            color="primary"
             url={`/link/${filteredLink.id}`}
           />
         ))}

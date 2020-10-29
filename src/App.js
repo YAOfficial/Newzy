@@ -47,7 +47,7 @@ import "@ionic/react/css/text-alignment.css";
 import "@ionic/react/css/text-transformation.css";
 import "@ionic/react/css/flex-utils.css";
 import "@ionic/react/css/display.css";
-
+import logo from "./log.png"
 /* Theme variables */
 import "./theme/variables.css";
 
@@ -77,7 +77,11 @@ const App = () => {
               <Route path="/link/:linkId" component={Link} />
               <Route component={() => <Redirect to="/news" />} />
             </IonRouterOutlet>
-            <IonTabBar color="primary" slot="bottom">
+            <IonTabBar  slot="top">
+            <IonTabButton color="primary" tab="tab1" href="/news">
+            
+            <img  id="logo1"alt="logo" height="100"   src={logo} /> 
+                      </IonTabButton>
               <IonTabButton tab="Home" href="Home">
                 <IonIcon icon={newspaperOutline} />
                 <IonLabel class="ion-text-center ">Home</IonLabel>

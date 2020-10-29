@@ -6,10 +6,9 @@ import LinkList from "../../components/Link/LinkList";
 const Trending = (props) => {
   return (
     <IonPage>
-      <SmallHeader title="Trending" />
+      
       <IonContent fullscreen>
-        <LargeHeader title="Trending" />
-        <LinkList location={props.location} />
+        <LinkList sizeXl="6" sizeLg="6" sizeMd="9" sizeSm="12" pushXl="3" pushLg="3" pushMd="2" location={props.location} />
       </IonContent>
     </IonPage>
   );

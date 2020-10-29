@@ -8,6 +8,7 @@ import {
   IonLabel,
   IonText,
   IonIcon,
+  IonCardHeader, IonCardSubtitle, IonCardTitle, IonCol, IonContent, IonGrid, IonHeader,IonMenuButton,IonMenuToggle,IonPage, IonRow, IonSplitPane, IonTitle, IonToolbar 
 } from "@ionic/react";
 import {
   linkOutline,
@@ -21,8 +22,10 @@ import { getHostName } from "../../helpers/domain";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 const LinkItem = ({ link, index, showCount, url, browser }) => {
   return (
-    <IonCard routerLink={url} onClick={browser} button>
-      <IonCardContent class="ion-no-padding">
+    <IonRow >
+      <IonCol sizeXl="8" sizeLg="8" sizeMd="9" sizeSm="12" pushXl="2" pushLg="2" pushMd="2">
+    <IonCard   mode="ios"  routerLink={url} onClick={browser} button>
+      <IonCardContent  class="ion-no-padding">
         <IonList lines="none">
           <IonItem>
             <IonBadge
@@ -149,6 +152,8 @@ const LinkItem = ({ link, index, showCount, url, browser }) => {
         </IonList>
       </IonCardContent>
     </IonCard>
+    </IonCol>
+    </IonRow>
   );
 };
 

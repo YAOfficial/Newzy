@@ -35,9 +35,9 @@ const Profile = (props) => {
   }
   return (
     <IonPage>
-      <SmallHeader title="Profile" />
+    
       <IonContent fullscreen>
-        <LargeHeader title="profile" />
+       
         {user ? (
           <>
             <IonCard>
@@ -89,7 +89,7 @@ const Profile = (props) => {
                 <IonButton
                   expand="block"
                   //eslint-disable-next-line
-                  onclick="javascript:location.href='https://yaofficial.github.io/portfolio/'"
+                  onclick="javascript:location.href='https://yusuf.is-a.dev'"
                   color="primary"
                   fill="outline"
                 >
@@ -103,6 +103,7 @@ const Profile = (props) => {
             <IonRow>
               <IonCol>
                 <IonButton
+                 id="buttons"
                   expand="block"
                   routerLink={"./register"}
                   color="primary"
@@ -114,10 +115,11 @@ const Profile = (props) => {
             <IonRow>
               <IonCol>
                 <IonButton
+                id="buttons"
                   expand="block"
                   routerLink={"./Login"}
                   color="primary"
-                  fill="outline"
+                
                 >
                   Log In
                 </IonButton>
@@ -127,8 +129,9 @@ const Profile = (props) => {
               <IonCol>
                 <IonButton
                   expand="block"
+                  id="buttons"
                   //eslint-disable-next-line
-                  onclick="javascript:location.href='https://yaofficial.github.io/portfolio/'"
+                  onclick="javascript:location.href='https://yusuf.is-a.dev'"
                   color="primary"
                   fill="outline"
                 >
